@@ -6,8 +6,7 @@ Books = []
 
 
 def GetInfo(page):
-    html_text = requests.get(
-        f'''https://www.bookdepository.com/category/353/Classic-Science-Fiction?page={page}''').text
+    html_text = requests.get(f'''https://www.bookdepository.com/category/353/Classic-Science-Fiction?page={page}''').text
     soup = BeautifulSoup(html_text, "lxml")
     info = soup.find_all('div', class_='book-item')
     # print(info)
